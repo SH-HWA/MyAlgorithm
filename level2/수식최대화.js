@@ -43,9 +43,12 @@ function solution(expression) {
   permutation(operator, []);
   // 가능한 우선순위 별 연산 결과를 찾음
   let result = [];
+  // 우선순위 조합 순서...
   for (let oper of priority) {
     let newArr = expArr.slice();
+    // 해당 우선순위의 연산자 순서...
     for (let j = 0; j < oper.length; j++) {
+      // 해당 연산자별로 연산할 expression의 배열버전 반복...
       for (let i = 0; i < newArr.length; i++) {
         if (newArr[i] === oper[j]) {
           let mid = 0;
