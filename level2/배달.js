@@ -14,11 +14,10 @@ function solution(N, road, K) {
       }
       if (cur[1] + newRoad[i][2] <= K) {
         result.push(newRoad[i][to]);
-        if (!visited[newRoad[i][to]]) {
-          visited[newRoad[i][to]] = cur[1] + newRoad[i][2];
-          findNext([newRoad[i][to], cur[1] + newRoad[i][2]], visited);
-        }
-        if (visited[newRoad[i][to]] > cur[1] + newRoad[i][2]) {
+        if (
+          !visited[newRoad[i][to]] ||
+          visited[newRoad[i][to]] > cur[1] + newRoad[i][2]
+        ) {
           visited[newRoad[i][to]] = cur[1] + newRoad[i][2];
           findNext([newRoad[i][to], cur[1] + newRoad[i][2]], visited);
         }
