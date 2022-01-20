@@ -16,11 +16,9 @@ function solution(s) {
       if (s[i] === "0") {
         del++;
       }
-      c;
     }
     // s: 구한 c를 2진법으로 표현한 문자열로 바꿔줌
     s = c.toString(2);
-    debugger;
   }
 
   return [count, del];
